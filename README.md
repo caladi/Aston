@@ -2,11 +2,11 @@
 Aston
 
 ## Run
-docker-compose up -d
+docker-compose up -d  
 
 ## Ports
-vue-frontend: 9998
-spring-backend: 9999
+vue-frontend: 9998  
+spring-backend: 9999  
 
 ## Go to
 http://localhost:9998/
