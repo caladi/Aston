@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./travelInsurance
+      dockerfile: Dockerfile
+    ports:
+      - 9999:9999
+    networks:
+      - aston
+  frontend:
+    container_name: frontend
+    restart: always
+    build:
+      context: ./insurance_fe
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules      
+    networks:
+      - aston
+    expose:
+      - "9998"
+    ports:
+      - "9998:80"
+    links:
+      - backend
+
+networks:
+  aston:
